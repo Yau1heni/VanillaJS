@@ -15,6 +15,18 @@
   filter: blur(var(--blur)) grayscale(var(--grayscale)) brightness(var(--brightness)) saturate(var(--saturate)) contrast(var(--contrast));
 }
 
+.preset-black-white {
+  filter: grayscale(100%) brightness(70%)
+}
+
+.preset-1997 {
+  filter: saturate(150%) brightness(110%) contrast(90%);
+}
+
+.preset-amaro {
+  filter: saturate(130%) brightness(110%) contrast(110%);
+}
+
 .hl {
   color: var(--base);
 }
