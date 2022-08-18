@@ -1,0 +1,43 @@
+:root {
+  --base: #51c70e;
+  --spacing: 10px;
+  --blur: 1px;
+}
+
+.main-img {
+  padding: var(--spacing);
+  background: var(--base);
+  filter: blur(var(--blur));
+}
+
+
+.hl {
+  color: var(--base);
+}
+
+body {
+  text-align: center;
+  background: #193549;
+  color: white;
+  font-family: 'helvetica neue', sans-serif;
+  font-weight: 100;
+  font-size: 50px;
+}
+
+.controls {
+  margin-bottom: 50px;
+}
+
+input {
+  width: 100px;
+}
+
+.reset, .button-load {
+  min-height: 50px;
+  width: 14%;
+  margin: 20px;
+  font-size: 20px;
+  background-color: rgb(161, 203, 219);
+  border: 2px solid #333;
+  border-radius: 5px;
+}
