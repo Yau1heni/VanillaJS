@@ -15,7 +15,6 @@
   filter: blur(var(--blur)) grayscale(var(--grayscale)) brightness(var(--brightness)) saturate(var(--saturate)) contrast(var(--contrast));
 }
 
-
 .hl {
   color: var(--base);
 }
