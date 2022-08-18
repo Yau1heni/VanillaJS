@@ -1,13 +1,18 @@
 :root {
   --base: #51c70e;
   --spacing: 10px;
+  --reset-spacing: 10px;
   --blur: 1px;
+  --grayscale: 0%;
+  --brightness: 100%;
+  --saturate: 100%;
+  --contrast: 100%;
 }
 
 .main-img {
   padding: var(--spacing);
   background: var(--base);
-  filter: blur(var(--blur));
+  filter: blur(var(--blur)) grayscale(var(--grayscale)) brightness(var(--brightness)) saturate(var(--saturate)) contrast(var(--contrast));
 }
 
 
