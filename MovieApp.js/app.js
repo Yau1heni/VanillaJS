@@ -4,6 +4,12 @@ const API_URL_POPULAR =
 
 getMovies(API_URL_POPULAR)
 
+function getClassByRate(rating) {
+    if (rating >= 7) return "green"
+    else if (rating > 5) return "orange"
+    else return "red"
+}
+
 async function getMovies(url) {
     const resp = await fetch(url, {
         headers: {
@@ -12,5 +18,25 @@ async function getMovies(url) {
         },
     })
     const respData = await resp.json()
-    console.log(respData)
+    showMovies(respData)
+}
+
+function showMovies(data) {
+    const moviesEl = document.querySelector('.movies')
+
+    data.films.forEach(movie => {
+        const movieEl = document.createElement('div')
+        movieEl.classList.add('movie')
+        movieEl.innerHTML = `
+            <div class="movie__cover-inner">
+                <img src="${movie.posterUrlPreview}" alt="img" class="movie__cover"/>
+            </div>
+            <div class="movie__info">
+                <div class="movie__title">${movie.nameRu}</div>
+                <div class="movie__category">${movie.genres.map(e => ` ${e.genre}`)}</div>
+                <div class="movie__average movie__average--${getClassByRate(movie.rating)}">${movie.rating}</div>
+            </div>
+`;
+        moviesEl.appendChild(movieEl)
+    });
 }
