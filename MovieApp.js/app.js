@@ -34,6 +34,7 @@ function showMovies(data) {
             <div class="movie__cover-inner">
                 <img src="${movie.posterUrlPreview}" alt="img" class="movie__cover"/>
             </div>
+            <div class="movie__cover--darkened"></div>
             <div class="movie__info">
                 <div class="movie__title">${movie.nameRu}</div>
                 <div class="movie__category">${movie.genres.map(e => ` ${e.genre}`)}</div>
