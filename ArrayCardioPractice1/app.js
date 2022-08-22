@@ -40,9 +40,45 @@ const totalYears = inventors.reduce((total, inventor) => {
 }, 0)
 console.log(totalYears)
 
+//Array.prototype.sort
 const oldest = inventors.sort((a, b) => {
   const lastGuy = a.passed - a.year
   const nextGuy = b.passed - b.year
   return lastGuy > nextGuy ? -1 : 1
 })
 console.log(oldest)
+
+const alpha = people.sort((lastOne, nextOne) => {
+  const [aLast, aFirst] = lastOne.split(", ");
+  const [bLast, bFirst] = nextOne.split(", ");
+  return aLast > bLast ? 1 : -1;
+});
+console.log(alpha);
+
+//Array.prototype.reduce
+const data = [
+  "car",
+  "car",
+  "truck",
+  "truck",
+  "bike",
+  "walk",
+  "car",
+  "van",
+  "bike",
+  "walk",
+  "car",
+  "van",
+  "car",
+  "truck",
+];
+
+const transportation = data.reduce(function (obj, item) {
+  if (!obj[item]) {
+    obj[item] = 0;
+  }
+  obj[item]++;
+  return obj;
+}, {});
+
+console.log(transportation);
