@@ -252,4 +252,4 @@ function addFriend(userObj, friend) {
     return arrFriends
 }
 
-console.log(addFriend(user, 'Pete'))
+console.log(addFriend(user4, 'Pete'))
