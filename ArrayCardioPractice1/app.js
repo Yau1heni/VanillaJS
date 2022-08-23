@@ -38,6 +38,7 @@ console.log(ordered)
 const totalYears = inventors.reduce((total, inventor) => {
   return total + (inventor.passed - inventor.year)
 }, 0)
+
 console.log(totalYears)
 
 //Array.prototype.sort
@@ -54,6 +55,7 @@ const alpha = people.sort((lastOne, nextOne) => {
   return aLast > bLast ? 1 : -1;
 });
 console.log(alpha);
+console.log();
 
 //Array.prototype.reduce
 const data = [
@@ -82,3 +84,4 @@ const transportation = data.reduce(function (obj, item) {
 }, {});
 
 console.log(transportation);
+console.log();
