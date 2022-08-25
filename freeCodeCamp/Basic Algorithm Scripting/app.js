@@ -47,27 +47,74 @@ function repeatStringNumTimes(str, num) {
     }
     return res
 }
-/* function repeatStringNumTimes(str, num) {
+/*  function repeatStringNumTimes(str, num) {
     if (num <= 0) return ''
     else if (num === 1) return str
     return str + repeatStringNumTimes(str, num - 1)
 } */
 repeatStringNumTimes("abc", 3)
 
-//8.
+//8. Truncate a String
+function truncateString(str, num) {
+    return str.length > num ? str.slice(0, num) + "..." : str
+}
+truncateString("A-tisket a-tasket A green and yellow basket", 8)
 
-//9.
+//9. Finders Keepers
+function findElement(arr, func) {
+    return arr.find(func)
+}
+findElement([1, 2, 3, 4], num => num % 2 === 0)
 
-//10.
+//10. Boo who
+function booWho(bool) {
+    return typeof bool === 'boolean'
+}
+booWho(null)
 
-//11.
+//11. Title Case a Sentence
+function titleCase(str) {
+    return str.split(' ')
+        .map(el => el[0].toUpperCase() + el.slice(1).toLowerCase())
+        .join(' ')
+}
+titleCase("I'm a little tea pot")
 
-//12.
+//12. Slice and Splice
+function frankenSplice(arr1, arr2, n) {
+    return [...arr2.slice(0, n), ...arr1, ...arr2.slice(n)]
+}
 
-//13.
+//13. Falsy Bouncer
+function bouncer(arr) {
+    return arr.filter(el => !!el !== false) // !!el Convert Values to Boolean
+}
+bouncer([7, "ate", "", false, 9])
 
-//14.
+//14. Where do I Belong
+function getIndexToIns(arr, num) {
+    return arr.filter(el => el < num).length
+}
+getIndexToIns([40, 60], 50)
 
-//15.
+//15. Mutations
+function mutation(arr) {
+    let arr1 = arr[0].toLowerCase()
+    let arr2 = arr[1].toLowerCase()
+    for (let i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) < 0) return false
+    }
+    return true
+}
+console.log(mutation(["hello", "hey"]))
 
-//16. 
+//16. Chunky Monkey
+function chunkArrayInGroups(arr, size) {
+    let newArr = []
+    for (let i = 0; i < arr.length; i += size) {
+        newArr.push(arr.slice(i, i + size))
+    }
+    return newArr
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2)
